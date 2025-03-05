@@ -10,6 +10,6 @@ app.use(express.json());
 app.get("/", (req, res) => { res.json({ message: "Funcionando!" }) });
 app.use("/api", shortenLink);
 
-app.listen(4004, () => {
+app.listen(8000, () => {
     console.log("Servidor iniciado em http://localhost:4004");
 });

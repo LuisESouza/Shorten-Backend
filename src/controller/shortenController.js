@@ -8,11 +8,11 @@ const linkShorten = async (req, res) => {
     }
 
     try {
-        const response = await axios.post('https://cleanuri.com/api/v1/shorten', {
-            url: url,
-        });
+        const response = await axios.post('https://cleanuri.com/api/v1/shorten', { url: url });
 
-        return res.json({ url: response.data.result_url });
+        console.log("Resposta da API:", response.data);
+        return res.json({ shortenedUrl: response.data.result_url });
+
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Ocorreu um erro ao encurtar a URL.' });
